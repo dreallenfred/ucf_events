@@ -1,0 +1,19 @@
+INSERT INTO student (student_id, f_name, l_name) VALUES (3945518, 'Aundre', 'Fredericks')
+
+INSERT INTO student (f_name, l_name) VALUES ('Greg', 'Jennings')
+
+INSERT INTO student (f_name, l_name) VALUES ('John', 'Smith')
+
+INSERT INTO student (f_name, l_name) VALUES ('Tony', 'Montana')
+
+INSERT INTO student (f_name, l_name) VALUES ('Sonya', 'Jones')
+
+INSERT INTO student (f_name, l_name) VALUES ('Felicia', 'James')
+
+INSERT INTO student (f_name, l_name) VALUES ('Zoe', 'Ballagh')
+
+INSERT INTO student (f_name, l_name) VALUES ('Delilah', 'Johnson')
+
+INSERT INTO student (f_name, l_name) VALUES ('Samantha', 'Atkins')
+
+INSERT INTO student (f_name, l_name) VALUES ('Jane', 'Doe')
