@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSO Events</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Fredericks Security Solutions Website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import Bootstrap Library -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Import Necessary local CSS Libraries -->
+    <link href="/index.css" rel="stylesheet">
+</head>
+<body>
+    <h3>Welcome to RSO Events</h3>
+    <br>   
+
+    <!-- Create University -->
+    <div>
+        <form action="/ecreate.php" method="POST">
+            <label for="e_name" style="color: black;">Event Name: </label>
+            <input type="text" id="e_name" name="e_name" placeholder="Event name">
+            <br><br>
+            <input type="radio" id="public" name="category" value="Public">
+            <label for="public" style="color: black;">Public</label>
+            <br><br>
+            <input type="radio" id="private" name="category" value="Private">
+            <label for="private" style="color: black;">Private</label>
+            <br><br>
+            <input type="radio" id="rso" name="category" value="RSO">
+            <label for="rso" style="color: black;">RSO </label>
+            <br><br>
+            <label for="location" style="color: black;">Location(Lat/Long): </label>
+            <input type="number" id="location" name="location" placeholder="Location">
+            <br><br>
+            <label for="date" style="color: black;">Date: </label>
+            <input type="date" id="date" name="date" placeholder="What day is this event taking place?">
+            <br><br>
+            <label for="phone" style="color: black;">Phone Number: </label>
+            <input type="text" id="phone" name="phone" placeholder="Phone Number">
+            <br><br>
+            <label for="email" style="color: black;">Email: </label>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <br><br>
+            <button type="submit" name="submit">Create Event</button>
+            <button>Cancel</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

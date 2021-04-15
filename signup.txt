@@ -1,0 +1,71 @@
+<?php
+   session_start();
+   $inData = getRequestInfo();
+
+   $user = $inData["username"];
+   $password = $inData["password"];
+   $firstName = $inData["f_name"];
+   $lastName = $inData["l_name"];
+   $email = $inData["email"];
+
+   // Create connection
+   $conn = mysqli_connect("localhost", "root", "", "ucf_events");
+   // Check connection
+	if ($conn->connect_error)
+	{
+		returnWithError( $conn->connect_error );
+	}
+   else
+	{
+      //add data to database
+      // check if database already contains info
+		$sql = "SELECT * FROM student WHERE username = '$user' ";
+      print_r("This is the username: ", $user);
+      print_r("\n");
+		$result = mysqli_query($conn, $sql);
+      // database has username
+		if ($result && mysqli_num_rows($result) > 0)
+		{
+			returnWithError( "Username already taken, please choose another" );
+		}
+      // make entry in database
+		else
+		{
+         $sql = "INSERT INTO student (username, password, f_name, l_name, email) VALUES (' $user ','$password','$firstName','$lastName','$email')";
+
+   		if( $result = mysqli_query($conn, $sql) != TRUE )
+   		{
+   			returnWithError( $conn->error );
+   		}
+         else
+         {
+            returnWithInfo( $user, $firstName, $lastName, $password, $email, "User created successfully");
+         }
+
+		}
+		$conn->close();
+	}
+
+   function getRequestInfo()
+   {
+      return json_decode(file_get_contents('php://input'), true);
+   }
+
+   function sendResultInfoAsJson( $obj )
+   {
+      header('Content-type: application/json');
+      echo $obj;
+   }
+
+   function returnWithError( $err )
+   {
+      $retValue = '{"student_id":0,"f_name":"","l_name":"","error":"' . $err . '"}';
+      sendResultInfoAsJson( $retValue );
+   }
+   function returnWithInfo( $user, $firstName, $lastName, $password, $email, $mssg)
+	{
+		$retValue = '{"username": "' . $user .'", "password":"' . $password . '", "f_name":"' . $firstName . '","l_name":"' . $lastName . '", "email":"' . $email . '", "message":"' . $mssg . '"}';
+		sendResultInfoAsJson( $retValue );
+	}
+
+ ?>
