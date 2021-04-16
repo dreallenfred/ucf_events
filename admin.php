@@ -34,6 +34,7 @@
 <div>
     <h3 style="text-align: center;">Welcome to RSO Events <?php echo $firstName." ".$lastName?></h3>
 
+    <button><a href="rcreate.html">Create RSO</a></button>
     <button><a href="ecreate.html">Create Event</a></button>
 </div>
 
