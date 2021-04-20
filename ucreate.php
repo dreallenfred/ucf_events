@@ -3,20 +3,28 @@ require_once('connect.php');
 
 if(isset($_POST["submit"])) {
     $name = $_POST["u_name"];
-    $location = $_POST["location"];
+    $latitude = $_POST["latitude"];
+    $longitude = $_POST["longitude"];
     $description = $_POST["u_description"];
     $enrollment = $_POST["enrollment"];
 
-
-    $sql = "INSERT INTO university (u_name, l_id, u_description, enrollment) VALUES ('$name', '$location', '$description', '$enrollment')";
-    $result = mysqli_query($conn, $sql);
-
-    if ($result) {
-        header("Location: home.php");
+    $sql_location = "INSERT INTO location (l_name, latitude, longitude) VALUES ('$name', '$latitude', '$longitude')";
+    $result_location = mysqli_query($conn, $sql_location);
+    if ($result_location) {
+        $sql = "INSERT INTO university (l_name, u_description, enrollment) VALUES ('$name', '$description', '$enrollment')";
+        $result = mysqli_query($conn, $sql);
+    
+        if ($result) {
+            header("Location: super_admin.php");
+        }
+        else {
+            echo "Error:".$sql;
+        }
     }
     else {
-        echo "Error:".$sql;
+        echo "Error:".$sql_location;
     }
+
 }
 ?>
 

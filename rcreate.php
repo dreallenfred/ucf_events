@@ -7,7 +7,7 @@ if(isset($_POST["submit"])) {
     $uid = $_POST["uid"];
 
 
-    $sql = "INSERT INTO rso (rso_name, event_id, user_id) VALUES ('$name', '$eid', '$uid')";
+    $sql = "INSERT INTO rso (rso_name) VALUES ('$name')";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {

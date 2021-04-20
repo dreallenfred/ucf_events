@@ -21,6 +21,7 @@ if (isset($_POST["submit"])) {
       echo "Error:".$sql;
    }
 }
+
 //    if (emptyInputSignup($username, $firstName, $lastName, $email, $password, $passwordrpt) !== false) {
 //       header("location: signUp.php?error=emptyinput");
 //       exit();
@@ -115,3 +116,4 @@ if (isset($_POST["submit"])) {
 //    mysqli_stmt_close($stmt);
 //    header("location: signUp.php?error=none");
 // }
+

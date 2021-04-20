@@ -1,7 +1,7 @@
 <?php
     require_once('connect.php');
     session_start();
-    $username = $_SESSION["username"];
+    $username = $_SESSION['username'];
 
     $firstName = $lastName = $email = '';
     $id = $_SESSION['user_id'];
@@ -53,9 +53,8 @@
 <body style="text-align: center;">
     <h3 >Welcome to the College Event Portal <?php echo $firstName." ".$lastName?></h3>
     <br><br>
-    <button><a href="ucreate.html">Create University</a></button>
-    <button><a href="rcreate.html">Create RSO</a></button>
-    <button><a href="ecreate.html">Create Event</a></button>
+    <button><a href="ecreate.php">Create Event</a></button>
+    <button><a href="join.php">Join RSO</a></button>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
