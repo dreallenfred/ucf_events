@@ -34,7 +34,7 @@
 <div>
     <h3 style="text-align: center;">Welcome to RSO Events <?php echo $firstName." ".$lastName?></h3>
 
-    <button><a href="ecreate.html">Create Event</a></button>
+    <button><a href="permission.html">Request to create event</a></button>
 </div>
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
