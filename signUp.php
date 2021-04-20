@@ -116,3 +116,4 @@ if (isset($_POST["submit"])) {
 //    mysqli_stmt_close($stmt);
 //    header("location: signUp.php?error=none");
 // }
+
